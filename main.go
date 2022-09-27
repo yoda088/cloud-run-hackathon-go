@@ -45,10 +45,22 @@ func play(input ArenaUpdate) (response string) {
 	log.Printf("IN: %#v", input)
 
 	commands := []string{"F", "T", "R", "L"}
+	command_Uturn := []string{"R", "F"}
+	var stack_Uturn int := 0
 	rand := rand2.Intn(4)//rand는 랜덤 계산 결과값
 	
 	// TODO add your implementation here to replace the random response
-	if rand == 0 {
+	//코너 빠져나
+	if stack_Uturn >= 2 {
+		stack_Uturn = 0	
+	}
+	if ArenaUpdate.Arena.State[X] == ArenaUpdate.Arena.Dimensions[0] || 
+	ArenaUpdate.Arena.State[X] == ArenaUpdate.Arena.Dimensions[len(ArenaUpdate.Arena.Dimensions) - 1] ||
+	ArenaUpdate.Arena.State[Y] == ArenaUpdate.Arena.Dimensions[0] || 
+	ArenaUpdate.Arena.State[Y] == ArenaUpdate.Arena.Dimensions[len(ArenaUpdate.Arena.Dimensions) - 1] {
+		return command_Uturn[stack_Utrun++]
+	}
+	else if rand == 0 {
 		//전진 시 한번 더 굴려서 발사 확률 올리기
 		rand = rand2.Intn(2)
 	}
