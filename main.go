@@ -50,14 +50,15 @@ func play(input ArenaUpdate) (response string) {
 	rand := rand2.Intn(4)//rand는 랜덤 계산 결과값
 	
 	// TODO add your implementation here to replace the random response
-	//코너 빠져나
+	//코너 빠져나가기
 	if stack_Uturn >= 2 {
 		stack_Uturn = 0	
 	}
-	if ArenaUpdate.Arena.State[X] == ArenaUpdate.Arena.Dimensions[0] || 
-	ArenaUpdate.Arena.State[X] == ArenaUpdate.Arena.Dimensions[len(ArenaUpdate.Arena.Dimensions) - 1] ||
-	ArenaUpdate.Arena.State[Y] == ArenaUpdate.Arena.Dimensions[0] || 
-	ArenaUpdate.Arena.State[Y] == ArenaUpdate.Arena.Dimensions[len(ArenaUpdate.Arena.Dimensions) - 1] {
+	
+	if input.Arena.State[X] == input.Arena.Dimensions[0] || 
+	input.Arena.State[X] == input.Arena.Dimensions[len(input.Arena.Dimensions) - 1] ||
+	input.Arena.State[Y] == input.Arena.Dimensions[0] || 
+	input.Arena.State[Y] == input.Arena.Dimensions[len(input.Arena.Dimensions) - 1] {
 		return command_Uturn[stack_Utrun++]
 	}
 	else if rand == 0 {
