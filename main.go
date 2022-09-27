@@ -44,15 +44,13 @@ func handler(w http.ResponseWriter, req *http.Request) {
 func play(input ArenaUpdate) (response string) {
 	log.Printf("IN: %#v", input)
 
-	commands := []string{"F", "R", "L", "T"}
-	commands2 := []string{"F", "T"}
+	commands := []string{"F", "T", "R", "L"}
 	rand := rand2.Intn(4)//rand는 랜덤 계산 결과값
 	
 	// TODO add your implementation here to replace the random response
 	if rand == "0" {
 		//전진 시 한번 더 굴려서 발사 확률 올리기
 		rand := rand2.Intn(2)
-		return commands2[rand]
 	}
 	
 	return commands[rand]
