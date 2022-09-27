@@ -1,5 +1,7 @@
 package main
 
+var stack_Uturn int := 0
+
 import (
 	"encoding/json"
 	"fmt"
@@ -46,7 +48,6 @@ func play(input ArenaUpdate) (response string) {
 
 	commands := []string{"F", "T", "T", "T", "T", "T", "T", "T", "R", "L"}
 	command_Uturn := []string{"R", "F"}
-	var stack_Uturn int := 0
 	rand := rand2.Intn(10)//rand는 랜덤 계산 결과값
 	
 	// TODO add your implementation here to replace the random response
@@ -56,7 +57,8 @@ func play(input ArenaUpdate) (response string) {
 		stack_Uturn = 0	
 	}
 	
-	if input.Arena.State["X"] == 0 || input.Arena.State["X"] == input.Arena.Dimensions[len(input.Arena.Dimensions) - 1] || input.Arena.State["Y"] == 0 || input.Arena.State["Y"] == input.Arena.Dimensions[len(input.Arena.Dimensions) - 1] ) {
+	if input.Arena.State["X"] == 0 || input.Arena.State["X"] == input.Arena.Dimensions[len(input.Arena.Dimensions) - 1] ||
+	input.Arena.State["Y"] == 0 || input.Arena.State["Y"] == input.Arena.Dimensions[len(input.Arena.Dimensions) - 1] ) {
 		return command_Uturn[stack_Utrun++]
 		//코너에 있을 시 U턴하기
 	}
