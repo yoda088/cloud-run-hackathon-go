@@ -1,7 +1,5 @@
 package main
 
-var stack_Uturn int := 0
-
 import (
 	"encoding/json"
 	"fmt"
@@ -47,22 +45,12 @@ func play(input ArenaUpdate) (response string) {
 	log.Printf("IN: %#v", input)
 
 	commands := []string{"F", "T", "T", "T", "T", "T", "T", "T", "R", "L"}
-	command_Uturn := []string{"R", "F"}
-	rand := rand2.Intn(10)//rand는 랜덤 계산 결과값
-	
+	//command_Uturn := []string{"R", "F"}
+	//var stack_Uturn int
+	//stack_Uturn = 0
+	rand := rand2.Intn(10) //rand는 랜덤 계산 결과값
+
 	// TODO add your implementation here to replace the random response
-	//코너 빠져나가기
-	if stack_Uturn >= 2 {
-		//코너 스택 초기화
-		stack_Uturn = 0	
-	}
-	
-	if input.Arena.State["X"] == 0 || input.Arena.State["X"] == input.Arena.Dimensions[len(input.Arena.Dimensions) - 1] ||
-	input.Arena.State["Y"] == 0 || input.Arena.State["Y"] == input.Arena.Dimensions[len(input.Arena.Dimensions) - 1] ) {
-		return command_Uturn[stack_Utrun++]
-		//코너에 있을 시 U턴하기
-	} else {
-		return commands[rand]
-		//코너가 아닐 경우 랜덤
-	}
+
+	return commands[rand]
 }
