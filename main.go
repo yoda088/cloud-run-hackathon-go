@@ -50,12 +50,12 @@ func play(input ArenaUpdate) (response string) {
 	//command := []string{"F", "T", "T", "T", "T", "T", "R", "L"}
 	commands := [][]string{{"R", "F", "T", "L", "F", "T", "L", "F", "T", "R"}, {"F", "T", "F", "T"},
 		{"T", "R", "T", "R", "T", "R", "T"}, {"T", "L", "T", "L", "T", "L", "T"}, {"R", "R", "F", "F"},
-		{"F", "F", "F"}, {"R", "F"}, {"L", "F"}}
+		{"F", "F", "F"}, {"R", "F", "T"}, {"L", "F", "T"}, {"T", "T", "T", "T", "T"}, {"T", "R", "T", "R", "T", "R", "T", "R"}}
 	if i >= (len(commands[rand]) - 1) {
 		i = -1
 	}
 	if i == -1 {
-		rand = rand2.Intn(8) //rand는 랜덤 계산 결과값
+		rand = rand2.Intn(10) //rand는 랜덤 계산 결과값
 	}
 	i++
 	return commands[rand][i]
