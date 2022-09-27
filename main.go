@@ -23,7 +23,7 @@ func main() {
 
 func handler(w http.ResponseWriter, req *http.Request) {
 	if req.Method == http.MethodGet {
-		fmt.Fprint(w, "Let the battle begin!")
+		fmt.Fprint(w, "Let the battle begin!!")
 		return
 	}
 
