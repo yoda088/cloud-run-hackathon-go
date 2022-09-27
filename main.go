@@ -51,7 +51,7 @@ func play(input ArenaUpdate) (response string) {
 	commands := [][]string{{"R", "F", "T", "L", "F", "T", "L", "F", "T", "R"}, {"F", "T", "F", "T"},
 		{"T", "R", "T", "R", "T", "R", "T"}, {"T", "L", "T", "L", "T", "L", "T"}, {"R", "R", "F", "F"},
 		{"F", "F", "F"}, {"R", "F"}, {"L", "F"}}
-	if i >= len(commands[rand]) {
+	if i >= (len(commands[rand]) - 1) {
 		i = -1
 	}
 	if i == -1 {
