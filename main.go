@@ -55,10 +55,8 @@ func play(input ArenaUpdate) (response string) {
 		stack_Uturn = 0	
 	}
 	
-	if input.Arena.State[X] == input.Arena.Dimensions[0] || 
-	input.Arena.State[X] == input.Arena.Dimensions[len(input.Arena.Dimensions) - 1] ||
-	input.Arena.State[Y] == input.Arena.Dimensions[0] || 
-	input.Arena.State[Y] == input.Arena.Dimensions[len(input.Arena.Dimensions) - 1] {
+	if input.Arena.State["X"] == 0 || input.Arena.State["X"] == input.Arena.Dimensions[len(input.Arena.Dimensions) - 1] ||
+	input.Arena.State["Y"] == 0 || input.Arena.State["Y"] == input.Arena.Dimensions[len(input.Arena.Dimensions) - 1] {
 		return command_Uturn[stack_Utrun++]
 	}
 	else if rand == 0 {
