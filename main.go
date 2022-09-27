@@ -50,7 +50,7 @@ func play(input ArenaUpdate) (response string) {
 	// TODO add your implementation here to replace the random response
 	if rand == 0 {
 		//전진 시 한번 더 굴려서 발사 확률 올리기
-		rand := rand2.Intn(2)
+		rand = rand2.Intn(2)
 	}
 	
 	return commands[rand]
