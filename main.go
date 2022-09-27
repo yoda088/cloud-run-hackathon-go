@@ -9,6 +9,9 @@ import (
 	"os"
 )
 
+var i int = -1
+var rand int = 0
+
 func main() {
 	port := "8080"
 	if v := os.Getenv("PORT"); v != "" {
@@ -44,13 +47,16 @@ func handler(w http.ResponseWriter, req *http.Request) {
 func play(input ArenaUpdate) (response string) {
 	log.Printf("IN: %#v", input)
 
-	commands := []string{"F", "T", "T", "T", "T", "T", "T", "T", "R", "L"}
-	//command_Uturn := []string{"R", "F"}
-	//var stack_Uturn int
-	//stack_Uturn = 0
-	rand := rand2.Intn(10) //rand는 랜덤 계산 결과값
-
-	// TODO add your implementation here to replace the random response
-
-	return commands[rand]
+	//command := []string{"F", "T", "T", "T", "T", "T", "R", "L"}
+	commands := [][]string{{"R", "F", "T", "L", "F", "T", "L", "F", "T", "R"}, {"F", "T", "F", "T"},
+		{"T", "R", "T", "R", "T", "R", "T"}, {"T", "L", "T", "L", "T", "L", "T"}, {"R", "R", "F", "F"},
+		{"F", "F", "F"}, {"R", "F"}, {"L", "F"}}
+	if i >= len(commands[rand]) {
+		i = -1
+	}
+	if i == -1 {
+		rand = rand2.Intn(8) //rand는 랜덤 계산 결과값
+	}
+	i++
+	return commands[rand][i]
 }
