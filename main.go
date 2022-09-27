@@ -23,7 +23,7 @@ func main() {
 
 func handler(w http.ResponseWriter, req *http.Request) {
 	if req.Method == http.MethodGet {
-		fmt.Fprint(w, "Let the battle begin!!")
+		fmt.Fprint(w, "Let the battle begin!")
 		return
 	}
 
@@ -48,7 +48,7 @@ func play(input ArenaUpdate) (response string) {
 	rand := rand2.Intn(4)//rand는 랜덤 계산 결과값
 	
 	// TODO add your implementation here to replace the random response
-	if rand == "0" {
+	if rand == 0 {
 		//전진 시 한번 더 굴려서 발사 확률 올리기
 		rand := rand2.Intn(2)
 	}
