@@ -54,15 +54,14 @@ func play(input ArenaUpdate) (response string) {
 	if stack_Uturn >= 2 {
 		stack_Uturn = 0	
 	}
-	
 	if input.Arena.State["X"] == 0 || input.Arena.State["X"] == input.Arena.Dimensions[len(input.Arena.Dimensions) - 1] ||
 	input.Arena.State["Y"] == 0 || input.Arena.State["Y"] == input.Arena.Dimensions[len(input.Arena.Dimensions) - 1] {
 		return command_Uturn[stack_Utrun++]
 	}
-	else if rand == 0 {
-		//전진 시 한번 더 굴려서 발사 확률 올리기
-		rand = rand2.Intn(2)
-	}
+	//else if rand == 0 {
+	//	//전진 시 한번 더 굴려서 발사 확률 올리기
+	//	rand = rand2.Intn(2)
+	//}
 	
 	return commands[rand]
 }
