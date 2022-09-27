@@ -48,7 +48,7 @@ func play(input ArenaUpdate) (response string) {
 	log.Printf("IN: %#v", input)
 
 	//command := []string{"F", "T", "T", "T", "T", "T", "R", "L"}
-	commands := [][]string{{"R", "F", "T", "L", "F", "T", "L", "F", "T", "R"}, {"F", "T", "F", "T"},
+	commands := [][]string{{"R", "F", "T", "L", "F", "T", "L", "F", "T", "R"}, {"F", "T", "F", "T", "F", "T"},
 		{"T", "R", "T", "R", "T", "R", "T"}, {"T", "L", "T", "L", "T", "L", "T"}, {"R", "R", "F", "F"},
 		{"F", "F", "F"}, {"R", "F", "T"}, {"L", "F", "T"}, {"T", "T", "T", "T", "T"}, {"T", "R", "T", "R", "T", "R", "T", "R"}}
 	if i >= (len(commands[rand]) - 1) {
