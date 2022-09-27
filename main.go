@@ -61,8 +61,7 @@ func play(input ArenaUpdate) (response string) {
 	input.Arena.State["Y"] == 0 || input.Arena.State["Y"] == input.Arena.Dimensions[len(input.Arena.Dimensions) - 1] ) {
 		return command_Uturn[stack_Utrun++]
 		//코너에 있을 시 U턴하기
-	}
-	else {
+	} else {
 		return commands[rand]
 		//코너가 아닐 경우 랜덤
 	}
