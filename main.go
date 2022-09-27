@@ -52,11 +52,16 @@ func play(input ArenaUpdate) (response string) {
 	// TODO add your implementation here to replace the random response
 	//코너 빠져나가기
 	if stack_Uturn >= 2 {
+		//코너 스택 초기화
 		stack_Uturn = 0	
 	}
+	
 	if input.Arena.State["X"] == 0 || input.Arena.State["X"] == input.Arena.Dimensions[len(input.Arena.Dimensions) - 1] || input.Arena.State["Y"] == 0 || input.Arena.State["Y"] == input.Arena.Dimensions[len(input.Arena.Dimensions) - 1] ) {
 		return command_Uturn[stack_Utrun++]
+		//코너에 있을 시 U턴하기
 	}
-	
-	return commands[rand]
+	else {
+		return commands[rand]
+		//코너가 아닐 경우 랜덤
+	}
 }
